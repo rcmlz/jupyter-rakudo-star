@@ -14,4 +14,12 @@ rm -fr rakudo-star-*
 # ensure jupyter-kernel.raku is in path at startup of jupyter
 export PATH=$INSTALL_DIR/bin/:$INSTALL_DIR/share/perl6/site/bin:$INSTALL_DIR/share/perl6/vendor/bin:$INSTALL_DIR/share/perl6/core/bin:$PATH
 
-echo "export PATH=$PATH" >> ~/start
+# instruction taken from https://github.com/bduggan/p6-jupyter-kernel
+zef install Jupyter::Kernel
+jupyter-kernel.raku --generate-config
+
+# color logo
+mv $HOME/ressources/logo-* /srv/conda/envs/notebook/share/jupyter/kernels/raku/
+
+# start is red during spinning up of container, preserve raku path ...
+echo "export PATH=$PATH:\$PATH" >> ~/start
