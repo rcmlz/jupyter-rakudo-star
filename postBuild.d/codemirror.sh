@@ -8,4 +8,4 @@ mkdir $CM_RAKU
 
 cp $HIGHLIGHTING $CM_RAKU/raku.js
 
-patch /srv/conda/envs/*/lib/python*/site-packages/notebook/static/components/codemirror/mode/meta.js $HOME/ressources/codemirror/codemirror_mode_meta_raku.patch
+patch /srv/conda/envs/*/lib/python*/site-packages/notebook/static/components/codemirror/mode/meta.js $HOME/ressources/codemirror_mode_meta_raku.patch
