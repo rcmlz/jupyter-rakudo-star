@@ -1,0 +1,9 @@
+# for latest rakudo-star bundle
+# instruction taken from see https://rakudo.org/star/source
+build-essential
+libssl-dev
+git
+
+# for raku kernel
+# instruction taken from https://github.com/bduggan/p6-jupyter-kernel
+libzmq5-dev

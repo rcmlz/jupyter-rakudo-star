@@ -1,0 +1,10 @@
+#!/bin/bash
+chmod +x postBuild.d/*.sh
+
+for file in postBuild.d/*.sh; do
+    [ -f "$file" ] || continue
+    $file
+done
+
+# required last line of start
+echo 'exec "$@"' >> ~/start
