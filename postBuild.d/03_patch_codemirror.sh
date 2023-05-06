@@ -5,8 +5,7 @@ source ~/start
 HIGHLIGHTING=ressources/raku.js
 #HIGHLIGHTING=ressources/raku2.js
 
-# ToDo: dynamically detect python version
-PYTHON_VERSION="python3.7"
+export PYTHON_VERSION=`python3 -c 'import sys; print("python" + ".".join(map(str, sys.version_info[:2])))'`
 CM_RAKU="/srv/conda/envs/notebook/lib/$PYTHON_VERSION/site-packages/notebook/static/components/codemirror/mode/raku"
 mkdir $CM_RAKU
 
